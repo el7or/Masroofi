@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Puzzle.Masroofi.WebApiAtmTransactions</name>
+    </assembly>
+    <members>
+        <member name="M:Puzzle.Masroofi.WebApiAtmTransactions.Controllers.ATMCardTransactionsController.ChargeByParent(Puzzle.Masroofi.Core.ViewModels.ATMCardTransactions.ChargeByParentViewModel)">
+            <summary>
+            Charge ATMCard By Parent Wallet
+            </summary>
+            <param name="model">
+            * Send Amount value for Charge
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiAtmTransactions.Controllers.ATMCardTransactionsController.RefundToParent(Puzzle.Masroofi.Core.ViewModels.ATMCardTransactions.RefundToParentViewModel)">
+            <summary>
+            Refund From ATMCard To Parent Wallet
+            </summary>
+            <param name="model">
+            * Send Amount value for Refund
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiAtmTransactions.Controllers.ATMCardTransactionsController.PayToVendor(Puzzle.Masroofi.Core.ViewModels.ATMCardTransactions.PayToVendorViewModel)">
+            <summary>
+            Pay By ATM Card To Vendor POS
+            </summary>
+            <param name="model">
+            * Send Amount value for Pay
+            * Must send ATMCardPassword encrypted.
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiAtmTransactions.Controllers.ATMCardTransactionsController.RefundFromVendor(Puzzle.Masroofi.Core.ViewModels.ATMCardTransactions.RefundFromVendorViewModel)">
+            <summary>
+            Refund From Vendor POS To ATMCard
+            </summary>
+            <param name="model">
+            * Send Amount value for Refund
+            * ReferenceTransactionId is POSMachineTransactionId for old transaction
+            * Must send POSMachinePinCode encrypted.
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiAtmTransactions.Controllers.ATMCardTransactionsController.GetAll(Puzzle.Masroofi.Core.ViewModels.ATMCardTransactions.ATMCardTransactionFilterViewModel)">
+            <summary>
+            Get ATMCardTransactions list
+            </summary>
+            <remarks>* You can filter and sort and paging for the list.</remarks>
+            <response code="200">paymentType is enum: Visa = 1, Cash = 2, Transfer = 3, Gift = 4, Withdraw = 5</response>
+        </member>
+    </members>
+</doc>

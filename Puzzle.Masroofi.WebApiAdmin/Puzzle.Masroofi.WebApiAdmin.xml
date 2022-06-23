@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Puzzle.Masroofi.WebApiAdmin</name>
+    </assembly>
+    <members>
+        <member name="M:Puzzle.Masroofi.WebApiAdmin.Controllers.CitiesController.GetAll(Puzzle.Masroofi.Core.ViewModels.Cities.CityFilterViewModel)">
+            <summary>
+            Get Cities list by GovernorateId or serach in CityName
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiAdmin.Controllers.CitiesController.Get(System.Int32)">
+            <summary>
+            Get City by CityId
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiAdmin.Controllers.CommissionsController.GetAll(Puzzle.Masroofi.Core.ViewModels.Commissions.CommissionFilterViewModel)">
+            <summary>
+            Get Commissions list
+            </summary>
+            <remarks>* You can filter and sort and paging for the list.</remarks>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiAdmin.Controllers.CommissionsController.Get(System.Guid)">
+            <summary>
+            Get Commission By CommissionId
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiAdmin.Controllers.CommissionsController.Create(Puzzle.Masroofi.Core.ViewModels.Commissions.CommissionInputViewModel)">
+            <summary>
+            Add new Commission
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiAdmin.Controllers.CommissionsController.Update(Puzzle.Masroofi.Core.ViewModels.Commissions.CommissionInputViewModel)">
+            <summary>
+            Update Commission
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiAdmin.Controllers.CommissionsController.Delete(System.Guid)">
+            <summary>
+            Delete Commission
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiAdmin.Controllers.CommissionsController.GetParentCommission(Puzzle.Masroofi.Core.ViewModels.Commissions.ParentCommissionInputViewModel)">
+            <summary>
+            Get Commission value for specific Parent
+            </summary>
+            <remarks>
+            * Must Send one of ParentId or ParentPhone.
+            * If will send ParentPhone send it without country code e.g: 01234567899
+            * Amount is: decimal Transaction Amount.
+            </remarks>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiAdmin.Controllers.GovernoratesController.GetAll(Puzzle.Masroofi.Core.ViewModels.Governorates.GovernorateFilterViewModel)">
+            <summary>
+            Get Governorates list by serach in GovernorateName
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiAdmin.Controllers.GovernoratesController.Get(System.Int32)">
+            <summary>
+            Get Governorate by GovernorateId
+            </summary>
+        </member>
+    </members>
+</doc>

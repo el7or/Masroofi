@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Puzzle.Masroofi.WebApiLogin</name>
+    </assembly>
+    <members>
+        <member name="M:Puzzle.Masroofi.WebApiLogin.Controllers.AuthController.Authenticate(Puzzle.Masroofi.Core.ViewModels.Auth.AuthenticateRequest)">
+            <response code="200">userType is enum: AdminUser = 1, Parent = 2, Vendor = 3, Son = 4</response>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiLogin.Controllers.AuthController.RefreshTokenAsync(Puzzle.Masroofi.Core.ViewModels.Auth.RefreshTokenRequest)">
+            <param name="model">Send RefreshToken not AccessToken.</param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiLogin.Controllers.AuthController.RevokeToken(Puzzle.Masroofi.Core.ViewModels.Auth.RevokeTokenRequest)">
+            <param name="model">Send RefreshToken not AccessToken.</param>
+        </member>
+    </members>
+</doc>

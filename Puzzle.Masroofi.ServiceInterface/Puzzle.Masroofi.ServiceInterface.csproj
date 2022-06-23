@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="POSMachineService.cs~RF14a7ca9f.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AWSSDK.Core" Version="3.7.5.7" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.7.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Puzzle.Masroofi.Infrastructure\Puzzle.Masroofi.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Puzzle.Masroofi.WebApiParents</name>
+    </assembly>
+    <members>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ATMCardsController.GetAll(Puzzle.Masroofi.Core.ViewModels.ATMCards.ATMCardFilterViewModel)">
+            <summary>
+            Get ATMCards list
+            </summary>
+            <remarks>* You can filter and sort and paging for the list.</remarks>
+            <response code="200">Status is enum: Pending = 1, Rejected = 2, InProgress = 3, Shipping = 4, Received = 5, Active = 6, Deactivated = 7, Lost = 8, Replaced = 9</response>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ATMCardsController.Get(System.Guid)">
+            <summary>
+            Get ATMCard By ATMCardId
+            </summary>
+            <response code="200">Status is enum: Pending = 1, Rejected = 2, InProgress = 3, Shipping = 4, Received = 5, Active = 6, Deactivated = 7, Lost = 8, Replaced = 9</response>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ATMCardsController.GetByCardId(System.Int64)">
+            <summary>
+            Get ATMCard Sons Details for mobile pos By CardId
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ATMCardsController.Create(Puzzle.Masroofi.Core.ViewModels.ATMCards.ATMCardInputViewModel)">
+            <summary>
+            Request new AtmCard for Son
+            </summary>
+            <param name="model">
+            * Son whom will add ATMCard to him must have at least one image and have not another active ATMCard.
+            * If sent Password, make it encrypted for 3 digits.
+            * If sent ShortNumber, make it 6 digits.
+            * If sent CardNumber, make it 16 digits.
+            * If sent SecurityCode, make it 3 digits.
+            </param>
+            <response code="200">Status will be automatically "Pending"</response>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ATMCardsController.Update(Puzzle.Masroofi.Core.ViewModels.ATMCards.ATMCardInputViewModel)">
+            <summary>
+            Update AtmCard
+            </summary>
+            <param name="model">
+            * If sent Password, make it encrypted for 3 digits.
+            * If sent ShortNumber, make it 6 digits.
+            * If sent CardNumber, make it 16 digits.
+            * If sent SecurityCode, make it 3 digits.
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ATMCardsController.Delete(System.Guid)">
+            <summary>
+            Delete AtmCard
+            </summary>
+            <response code="200">Status will be automatically "Deactivated"</response>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ATMCardsController.UpdatePassword(Puzzle.Masroofi.Core.ViewModels.ATMCards.ATMCardPasswordViewModel)">
+            <summary>
+            Update ATMCard Password
+            </summary>
+            <param name="model">
+            * Password must be encrypted for 3 digits.
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ATMCardsController.UpdateStatusAsync(Puzzle.Masroofi.Core.ViewModels.ATMCards.ATMCardStatusViewModel)">
+            <summary>
+            Update ATMCard Status
+            </summary>
+            <param name="model">
+            * Status is enum: Pending = 1, Rejected = 2, InProgress = 3, Shipping = 4, Received = 5, Active = 6, Deactivated = 7, Lost = 8, Replaced = 9
+            * RejectedReason is required only if Status = Rejected.
+            * Password encrypted for 3 digits is required only if Status = Active.
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ATMCardsController.LostATMCard(Puzzle.Masroofi.Core.ViewModels.ATMCards.LostATMCardViewModel)">
+            <summary>
+            Lost current ATMCard and request new one
+            </summary>
+            <param name="model">
+            * If sent Password, make it encrypted for 3 digits.
+            * If sent ShortNumber, make it 6 digits.
+            * If sent CardNumber, make it 16 digits.
+            * If sent SecurityCode, make it 3 digits.
+            </param>
+            <response code="200">Status for old ATMCard will be automatically "Lost" and return New ATMCard data.</response>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ATMCardsController.ReplacedATMCard(Puzzle.Masroofi.Core.ViewModels.ATMCards.ReplacedATMCardViewModel)">
+            <summary>
+            Replace current ATMCard by new one
+            </summary>
+            <param name="model">
+            * If sent Password, make it encrypted for 3 digits.
+            * If sent ShortNumber, make it 6 digits.
+            * If sent CardNumber, make it 16 digits.
+            * If sent SecurityCode, make it 3 digits.
+            </param>
+            <response code="200">Status for old ATMCard will be automatically "Replaced" and return New ATMCard data.</response>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ATMCardsController.GetBalance(System.Guid)">
+            <summary>
+            Get ATMCard balance by ATMCardId 
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ATMCardsController.GetAtmCardStatus">
+            <summary>
+            Get ATMCard Status
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ATMCardTypesController.GetAll(Puzzle.Masroofi.Core.ViewModels.ATMCardTypes.ATMCardTypeFilterViewModel)">
+            <summary>
+            Get ATMCardTypes list
+            </summary>
+            <remarks>* You can filter and sort and paging for the list.</remarks>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ATMCardTypesController.Get(System.Guid)">
+            <summary>
+            Get ATMCardType By ATMCardTypeId
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ATMCardTypesController.Create(Puzzle.Masroofi.Core.ViewModels.ATMCardTypes.ATMCardTypeInputViewModel)">
+            <summary>
+            Add new ATMCardType
+            </summary>
+            <param name="model">
+            * Must adding FrontImage by send fileBase64 and fileName in newFrontImage property
+            * Must adding BackImage by send fileBase64 and fileName in newBackImage property
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ATMCardTypesController.Update(Puzzle.Masroofi.Core.ViewModels.ATMCardTypes.ATMCardTypeInputViewModel)">
+            <summary>
+            Update ATMCardType
+            </summary>
+            <param name="model">
+            * If will update any image send fileBase64 and fileName in newImage property, if will keep old image send imageUrl property
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ATMCardTypesController.Delete(System.Guid)">
+            <summary>
+            Delete ATMCardType
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ParentsController.Register(Puzzle.Masroofi.Core.ViewModels.Parents.ParentInputViewModel)">
+            <summary>
+            Register parent by mobile
+            </summary>
+            <param name="model">
+            * Must send Phone encrypted
+            * Must send PinCode encrypted
+            * For adding parent image send fileBase64 and fileName in newImage property
+            * Gender is enum: Male = 1, Female = 2
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ParentsController.Login(Puzzle.Masroofi.Core.ViewModels.Parents.ParentLoginViewModel)">
+            <summary>
+            Login parent by mobile
+            </summary>
+            <param name="model">
+            * Must send Phone encrypted
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ParentsController.Update(Puzzle.Masroofi.Core.ViewModels.Parents.ParentInputViewModel)">
+            <summary>
+            To add more information for registered Parent
+            </summary>
+            <param name="model">
+            * Must send Phone encrypted
+            * Must send PinCode encrypted
+            * If will update image send fileBase64 and fileName in newImage property, if will keep old image send imageUrl property
+            * Gender is enum: Male = 1, Female = 2
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ParentsController.GetById(System.Guid)">
+            <summary>
+            Get Parent By ParentId
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ParentsController.Delete(System.Guid)">
+            <summary>
+            Delete Parent
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ParentsController.ChangeActivation(Puzzle.Masroofi.Core.ViewModels.Parents.ParentActivationViewModel)">
+            <summary>
+            Activate or Deactivate Parent
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ParentsController.CheckPinCodeExists(Puzzle.Masroofi.Core.ViewModels.Parents.CheckPinCodeViewModel)">
+            <summary>
+            Check if PinCode is exists for the Parent
+            </summary>
+            <param name="model">
+            * Must send PinCode encrypted
+            </param>
+            <response code="200">result will be true if PinCode is exists</response>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ParentsController.ForgetPinCodeAsync(System.Guid)">
+            <summary>
+            Generate new PinCode and send it as SMS to Parent Phone
+            </summary>
+            <param name="id">
+            * Send ParentId to generate new PinCode
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ParentsController.UpdatePinCodeAsync(Puzzle.Masroofi.Core.ViewModels.Parents.UpdatePinCodeViewModel)">
+            <summary>
+            Update Parent PinCode
+            </summary>
+            <param name="model">
+            * Must send PinCode and OldPinCode encrypted.
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ParentsController.UpdatePhone(Puzzle.Masroofi.Core.ViewModels.Parents.UpdatePhoneViewModel)">
+            <summary>
+            Update Parent Phone
+            </summary>
+            <param name="model">
+            * Must send Phone encrypted
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ParentsController.Get(System.Guid)">
+            <summary>
+            Get Parent balance by ParentId 
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ParentWalletTransactionsController.ChargeByCreditCard(Puzzle.Masroofi.Core.ViewModels.ParentWalletTransactions.ChargeByCreditCardViewModel)">
+            <summary>
+            Charge Parent Wallet By Credit Card
+            </summary>
+            <param name="model">
+            * Send Amount value and Commission Values for Charge
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ParentWalletTransactionsController.UpdateChargeByCreditCard(Puzzle.Masroofi.Core.ViewModels.ParentWalletTransactions.UpdateChargeByCreditCardViewModel)">
+            <summary>
+            Update Charge Parent Wallet By Credit Card
+            </summary>
+            <param name="model">
+            * Must send parentWalletTransactionId encrypted.
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ParentWalletTransactionsController.ChargeByVendor(Puzzle.Masroofi.Core.ViewModels.ParentWalletTransactions.ChargeByVendorViewModel)">
+            <summary>
+            Charge Parent Wallet By Vendor POS
+            </summary>
+            <param name="model">
+            * Must Send one of ParentId or ParentPhone.
+            * If will send ParentPhone send it without country code e.g: 01234567899
+            * Send Amount value for Charge and Commission Values.
+            * Must send POSMachinePinCode encrypted.
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ParentWalletTransactionsController.ChargeByAdmin(Puzzle.Masroofi.Core.ViewModels.ParentWalletTransactions.ChargeByAdminViewModel)">
+            <summary>
+            Charge Parent Wallet By Admin
+            </summary>
+            <param name="model">
+            * Send Amount value for Charge
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ParentWalletTransactionsController.WithdrawByAdmin(Puzzle.Masroofi.Core.ViewModels.ParentWalletTransactions.WithdrawByAdminViewModel)">
+            <summary>
+            Withdraw From Parent Wallet By Admin
+            </summary>
+            <param name="model">
+            * Send Amount value for Withdraw
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.ParentWalletTransactionsController.GetAll(Puzzle.Masroofi.Core.ViewModels.ParentWalletTransactions.ParentWalletTransactionFilterViewModel)">
+            <summary>
+            Get ParentWalletTransactions list
+            </summary>
+            <remarks>* You can filter and sort and paging for the list.</remarks>
+            <response code="200">paymentType is enum: Visa = 1, Cash = 2, Transfer = 3, Gift = 4, Withdraw = 5</response>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.SonsController.GetAll(Puzzle.Masroofi.Core.ViewModels.Sons.SonFilterViewModel)">
+            <summary>
+            Get Sons list
+            </summary>
+            <remarks>* You can filter and sort and paging for the list.</remarks>
+            <response code="200">ATMCard Status is enum: Pending = 1, Rejected = 2, InProgress = 3, Shipping = 4, Received = 5, Active = 6, Deactivated = 7, Lost = 8, Replaced = 9</response>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.SonsController.Get(System.Guid)">
+            <summary>
+            Get Son By SonId
+            </summary>
+            <response code="200">ATMCard Status is enum: Pending = 1, Rejected = 2, InProgress = 3, Shipping = 4, Received = 5, Active = 6, Deactivated = 7, Lost = 8, Replaced = 9</response>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.SonsController.Create(Puzzle.Masroofi.Core.ViewModels.Sons.SonInputViewModel)">
+            <summary>
+            Add new Son
+            </summary>
+            <param name="model">
+            * Must adding son image by send fileBase64 and fileName in newImage property
+            * Gender is enum: Male = 1, Female = 2
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.SonsController.Update(Puzzle.Masroofi.Core.ViewModels.Sons.SonInputViewModel)">
+            <summary>
+            Update Son
+            </summary>
+            <param name="model">
+            * If will update image send fileBase64 and fileName in newImage property, if will keep old image send imageUrl property
+            * Gender is enum: Male = 1, Female = 2
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.SonsController.Delete(System.Guid)">
+            <summary>
+            Delete Son
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.SonsController.ChangeActivation(Puzzle.Masroofi.Core.ViewModels.Sons.SonActivationViewModel)">
+            <summary>
+            Activate or Deactivate Son
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiParents.Controllers.SonsController.GetBalance(System.Guid)">
+            <summary>
+            Get Son balance by SonId 
+            </summary>
+        </member>
+    </members>
+</doc>

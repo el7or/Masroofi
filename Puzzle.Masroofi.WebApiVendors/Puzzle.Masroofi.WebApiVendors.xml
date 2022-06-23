@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Puzzle.Masroofi.WebApiVendors</name>
+    </assembly>
+    <members>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.POSMachinesController.GetAll(Puzzle.Masroofi.Core.ViewModels.POSMachines.POSMachineFilterViewModel)">
+            <summary>
+            Get POSMachines list
+            </summary>
+            <remarks>* You can filter and sort and paging for the list.</remarks>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.POSMachinesController.Get(System.Guid)">
+            <summary>
+            Get POSMachine By POSMachineId
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.POSMachinesController.Create(Puzzle.Masroofi.Core.ViewModels.POSMachines.POSMachineInputViewModel)">
+            <summary>
+            Add new POSMachine for Vendor
+            </summary>
+            <param name="model">
+            * Must send PinCode encrypted for 4 digits.
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.POSMachinesController.Update(Puzzle.Masroofi.Core.ViewModels.POSMachines.POSMachineInputViewModel)">
+            <summary>
+            Update POSMachine
+            </summary>
+            <param name="model">
+            * Must send PinCode encrypted for 4 digits.
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.POSMachinesController.Delete(System.Guid)">
+            <summary>
+            Delete POSMachine
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.POSMachinesController.Login(Puzzle.Masroofi.Core.ViewModels.POSMachines.POSMachineLoginViewModel)">
+            <summary>
+            Login posMachine
+            </summary>
+            <param name="model">
+            * Must send PinCode encrypted for 4 digits.
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.POSMachinesController.ForgetPinCode(System.String)">
+            <summary>
+            Generate new PinCode and send it as SMS to Vendor Phone
+            </summary>
+            <param name="username">
+            * Send username to generate new PinCode
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.POSMachinesController.UpdatePinCode(Puzzle.Masroofi.Core.ViewModels.POSMachines.POSMachinePinCodeViewModel)">
+            <summary>
+            Update POSMachine PinCode
+            </summary>
+            <param name="model">
+            * Must send PinCode and OldPinCode encrypted.
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.POSMachinesController.GetBalance(System.Guid)">
+            <summary>
+            Get Vendor balance by POSMachineId 
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.POSMachineTransactionsController.ChargeByAdmin(Puzzle.Masroofi.Core.ViewModels.POSMachineTransactions.ChargePOSByAdminViewModel)">
+            <summary>
+            Charge POS Machine By Admin
+            </summary>
+            <param name="model">
+            * Send Amount value for Charge
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.POSMachineTransactionsController.PayDuesByAdmin(Puzzle.Masroofi.Core.ViewModels.POSMachineTransactions.PayDuesByAdminViewModel)">
+            <summary>
+            Pay Dues From POS Machine By Admin
+            </summary>
+            <param name="model">
+            * Send Amount value for Pay Dues
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.POSMachineTransactionsController.GetAll(Puzzle.Masroofi.Core.ViewModels.POSMachineTransactions.POSMachineTransactionFilterViewModel)">
+            <summary>
+            Get POSMachineTransactions list
+            </summary>
+            <remarks>* You can filter and sort and paging for the list.</remarks>
+            <response code="200">paymentType is enum: Visa = 1, Cash = 2, Transfer = 3, Gift = 4, Withdraw = 5</response>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.VendorsController.GetAll(Puzzle.Masroofi.Core.ViewModels.Vendors.VendorFilterViewModel)">
+            <summary>
+            Get Vendors list
+            </summary>
+            <remarks>* You can filter and sort and paging for the list.</remarks>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.VendorsController.Get(System.Guid)">
+            <summary>
+            Get Vendor By VendorId
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.VendorsController.Create(Puzzle.Masroofi.Core.ViewModels.Vendors.VendorInputViewModel)">
+            <summary>
+            Add new Vendor
+            </summary>
+            <param name="model">
+            * For adding parent image send fileBase64 and fileName in newImage property
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.VendorsController.Update(Puzzle.Masroofi.Core.ViewModels.Vendors.VendorInputViewModel)">
+            <summary>
+            Update Vendor
+            </summary>
+            <param name="model">
+            * If will update image send fileBase64 and fileName in newImage property, if will keep old image send imageUrl property
+            </param>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.VendorsController.Delete(System.Guid)">
+            <summary>
+            Delete Vendor
+            </summary>
+        </member>
+        <member name="M:Puzzle.Masroofi.WebApiVendors.Controllers.VendorsController.GetBalance(System.Guid)">
+            <summary>
+            Get Vendor balance by VendorId 
+            </summary>
+        </member>
+    </members>
+</doc>
